@@ -4,7 +4,7 @@ const numberOfCommentsLimit = 3;
 const snapshotUrl = "https://snapshot.org/#/sandboxdao.eth/";
 
 const title = document.getElementById("sip-title");
-const category = document.getElementById("sip-category");
+const category = document.getElementById("sip-name-00");
 const sipStatus = document.getElementById("sip-status");
 const sipStatusDetails = document.getElementById("sip-status-details");
 
@@ -30,6 +30,10 @@ const voteBtn = document.getElementById("vote-btn");
 const discourseLink = document.getElementById("discourse-link");
 
 let hasVoted = false;
+
+function isProposalEndingSoon(proposal) {
+    return proposal.end * 1000 - new Date().getTime() < 86400000 && (proposal.state == "active" || proposal.state == "Active");
+}
 
 async function fetchProposalData(proposalId) {
     const url = `https://api.tsbdao.com/proposals/${proposalId}`;
@@ -62,18 +66,30 @@ async function setValuesFromProposalData(proposalData) {
     title.innerText = proposalData.title;
 
     if (proposalData.state === "Active" || proposalData.state === "active") {
-        sipStatus.style.color = "#1ab022";
-        sipStatus.style.borderColor = "#1ab022";
+        sipStatus.style.color = "#149100"; //1ab022
+        sipStatus.style.borderColor = "#DCFFD6"; //1ab022
+        sipStatus.style.backgroundColor = "#DCFFD6";
+    } else if (proposalData.state === "Closed" || proposalData.state === "closed") {
+        sipStatus.style.color = "#13181D";
+        sipStatus.style.borderColor = "#dadada";
+        sipStatus.style.backgroundColor = "#dadada";
     }
-    else if (proposalData.state === "Closed" || proposalData.state === "closed") {
-        sipStatus.style.color = "#5f5f5f";
-        sipStatus.style.borderColor = "#5f5f5f";
+    // ENDING SOON (have to check manually)
+    if ((proposalData.state === "Active" || proposalData.state === "active") && isProposalEndingSoon(proposalData)) {
+        sipStatus.style.color = "#BD6600";
+        sipStatus.style.borderColor = "#FFE1C5";
+        sipStatus.style.backgroundColor = "#FFE1C5";
     }
 
     //set the fisrt letter of the state to uppercase
     proposalData.state = proposalData.state.charAt(0).toUpperCase() + proposalData.state.slice(1);
 
-    sipStatus.innerText = proposalData.state;
+    if ((proposalData.state === "Active" || proposalData.state === "active") && isProposalEndingSoon(proposalData)) {
+        sipStatus.innerText = "Ending Soon";
+    } else {
+        sipStatus.innerText = proposalData.state;
+    }
+
     sipStatusDetails.innerText = proposalData.state;
 
     let authorAddress = proposalData.author;
@@ -568,8 +584,8 @@ function isUserLoggedIn() {
 }
 
 async function handleDiscourse(proposalData) {
-    const sipCategory = document.getElementById("sip-category");
-    sipCategory.innerText = proposalData.category;
+    const sipName = document.getElementById("sip-name-00");
+    sipName.innerText = proposalData.title;
 
     const url = proposalData.discussion;
     discussProposalBtn.setAttribute("href", url);
