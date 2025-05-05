@@ -96,15 +96,6 @@ function setColorOfFillinBar(fillingBar, percentage) {
     }
 }
 
-function setViewTransactionsElements(walletBalancesDict) {
-    WEB3_ECOSYSTEM_INTEGRATION.viewTransactions.href = "https://polygonscan.com/address/" + walletBalancesDict["Web3 Ecosystem Integration"].regularAddress;
-    SEASON_REWARDS_GAME_CREATION.viewTransactions.href = "https://polygonscan.com/address/" + walletBalancesDict["Season Rewards & Game Creation"].regularAddress;
-    COMMUNITY_ENGAGEMENT_CHARITY.viewTransactions.href = "https://polygonscan.com/address/" + walletBalancesDict["Community Engagement & Charity"].regularAddress;
-    EDUCATION_ONBOARDING_TECHNOLOGY.viewTransactions.href = "https://polygonscan.com/address/" + walletBalancesDict["Education, Onboarding & Technology"].regularAddress;
-    OPERATIONS.viewTransactions.href = "https://polygonscan.com/address/" + walletBalancesDict["Operations"].regularAddress;
-    RESERVE.viewTransactions.href = "https://polygonscan.com/address/" + walletBalancesDict["Reserve"].regularAddress;
-}
-
 function setCurrentBalanceElement(walletBalancesDict) {
     let totalBalance = 0;
     for (let key in walletBalancesDict) {
@@ -117,7 +108,6 @@ function setCurrentBalanceElement(walletBalancesDict) {
 function setElementsAccordingToBalances(walletBalancesDict) {
     setSandRemainingElements(walletBalancesDict);
     setSandRemainingSmallElements(walletBalancesDict);
-    setViewTransactionsElements(walletBalancesDict);
     setPercentageRemainingElements(walletBalancesDict);
     setCurrentBalanceElement(walletBalancesDict);
 }
