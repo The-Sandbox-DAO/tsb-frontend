@@ -5,7 +5,6 @@ const WEB3_ECOSYSTEM_INTEGRATION = {
     "percentageRemaining": document.getElementById("percent-jauge-1"),
     "fillingBar": document.getElementById("filling-bar-1"),
     "sandRemainingSmall": document.getElementById("sand-left-small-1"),
-    "viewTransactions": document.getElementById("transaction-btn-1"),
 };
 
 const SEASON_REWARDS_GAME_CREATION = {
@@ -13,7 +12,6 @@ const SEASON_REWARDS_GAME_CREATION = {
     "percentageRemaining": document.getElementById("percent-jauge-3"),
     "fillingBar": document.getElementById("filling-bar-3"),
     "sandRemainingSmall": document.getElementById("sand-left-small-3"),
-    "viewTransactions": document.getElementById("transaction-btn-3"),
 };
 
 const COMMUNITY_ENGAGEMENT_CHARITY = {
@@ -21,7 +19,6 @@ const COMMUNITY_ENGAGEMENT_CHARITY = {
     "percentageRemaining": document.getElementById("percent-jauge-7"),
     "fillingBar": document.getElementById("filling-bar-7"),
     "sandRemainingSmall": document.getElementById("sand-left-small-7"),
-    "viewTransactions": document.getElementById("transaction-btn-7"),
 };
 
 const EDUCATION_ONBOARDING_TECHNOLOGY = {
@@ -29,7 +26,6 @@ const EDUCATION_ONBOARDING_TECHNOLOGY = {
     "percentageRemaining": document.getElementById("percent-jauge-8"),
     "fillingBar": document.getElementById("filling-bar-8"),
     "sandRemainingSmall": document.getElementById("sand-left-small-8"),
-    "viewTransactions": document.getElementById("transaction-btn-8"),
 };
 
 const OPERATIONS = {
@@ -37,7 +33,6 @@ const OPERATIONS = {
     "percentageRemaining": document.getElementById("percent-jauge-5"),
     "fillingBar": document.getElementById("filling-bar-5"),
     "sandRemainingSmall": document.getElementById("sand-left-small-5"),
-    "viewTransactions": document.getElementById("transaction-btn-5"),
 };  
 
 const RESERVE = {
@@ -45,7 +40,6 @@ const RESERVE = {
     "percentageRemaining": document.getElementById("percent-jauge-4"),
     "fillingBar": document.getElementById("filling-bar-4"),
     "sandRemainingSmall": document.getElementById("sand-left-small-4"),
-    "viewTransactions": document.getElementById("transaction-btn-4"),
 };
 
 function numberToStringWithCommas(x) {
