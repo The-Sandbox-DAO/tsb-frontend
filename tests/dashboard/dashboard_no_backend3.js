@@ -57,12 +57,12 @@ function setSandRemainingSmallElements(walletBalancesDict) {
 }
 
 function setSandRemainingElements(walletBalancesDict) {
-    WEB3_ECOSYSTEM_INTEGRATION.sandRemaining.innerHTML = numberToStringWithCommas(walletBalancesDict["Web3 Ecosystem Integration"].regularBalance + walletBalancesDict["Web3 Ecosystem Integration"].reserveBalance);
-    SEASON_REWARDS_GAME_CREATION.sandRemaining.innerHTML = numberToStringWithCommas(walletBalancesDict["Season Rewards & Game Creation"].regularBalance + walletBalancesDict["Season Rewards & Game Creation"].reserveBalance);
-    COMMUNITY_ENGAGEMENT_CHARITY.sandRemaining.innerHTML = numberToStringWithCommas(walletBalancesDict["Community Engagement & Charity"].regularBalance + walletBalancesDict["Community Engagement & Charity"].reserveBalance);
-    EDUCATION_ONBOARDING_TECHNOLOGY.sandRemaining.innerHTML = numberToStringWithCommas(walletBalancesDict["Education, Onboarding & Technology"].regularBalance + walletBalancesDict["Education, Onboarding & Technology"].reserveBalance);
-    OPERATIONS.sandRemaining.innerHTML = numberToStringWithCommas(walletBalancesDict["Operations"].regularBalance + walletBalancesDict["Operations"].reserveBalance);
-    RESERVE.sandRemaining.innerHTML = numberToStringWithCommas(walletBalancesDict["Reserve"].regularBalance + walletBalancesDict["Reserve"].reserveBalance);
+    WEB3_ECOSYSTEM_INTEGRATION.sandRemaining.innerHTML = numberToStringWithCommas((walletBalancesDict["Web3 Ecosystem Integration"].regularBalance + walletBalancesDict["Web3 Ecosystem Integration"].reserveBalance).toFixed(2));
+    SEASON_REWARDS_GAME_CREATION.sandRemaining.innerHTML = numberToStringWithCommas((walletBalancesDict["Season Rewards & Game Creation"].regularBalance + walletBalancesDict["Season Rewards & Game Creation"].reserveBalance).toFixed(2));
+    COMMUNITY_ENGAGEMENT_CHARITY.sandRemaining.innerHTML = numberToStringWithCommas((walletBalancesDict["Community Engagement & Charity"].regularBalance + walletBalancesDict["Community Engagement & Charity"].reserveBalance).toFixed(2));
+    EDUCATION_ONBOARDING_TECHNOLOGY.sandRemaining.innerHTML = numberToStringWithCommas((walletBalancesDict["Education, Onboarding & Technology"].regularBalance + walletBalancesDict["Education, Onboarding & Technology"].reserveBalance).toFixed(2));
+    OPERATIONS.sandRemaining.innerHTML = numberToStringWithCommas((walletBalancesDict["Operations"].regularBalance + walletBalancesDict["Operations"].reserveBalance).toFixed(2));
+    RESERVE.sandRemaining.innerHTML = numberToStringWithCommas((walletBalancesDict["Reserve"].regularBalance + walletBalancesDict["Reserve"].reserveBalance).toFixed(2));
 }
 
 function setPercentageRemainingToElement(walletBalance, percentageRemainingElement, fillingBarElement) {
