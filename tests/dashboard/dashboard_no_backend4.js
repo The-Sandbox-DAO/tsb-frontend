@@ -48,21 +48,21 @@ function numberToStringWithCommas(x) {
 }
 
 function setSandRemainingSmallElements(walletBalancesDict) {
-    WEB3_ECOSYSTEM_INTEGRATION.sandRemainingSmall.innerHTML = numberToStringWithCommas(walletBalancesDict["Web3 Ecosystem Integration"].regularBalance + walletBalancesDict["Web3 Ecosystem Integration"].reserveBalance);
-    SEASON_REWARDS_GAME_CREATION.sandRemainingSmall.innerHTML = numberToStringWithCommas(walletBalancesDict["Season Rewards & Game Creation"].regularBalance + walletBalancesDict["Season Rewards & Game Creation"].reserveBalance);
-    COMMUNITY_ENGAGEMENT_CHARITY.sandRemainingSmall.innerHTML = numberToStringWithCommas(walletBalancesDict["Community Engagement & Charity"].regularBalance + walletBalancesDict["Community Engagement & Charity"].reserveBalance);
-    EDUCATION_ONBOARDING_TECHNOLOGY.sandRemainingSmall.innerHTML = numberToStringWithCommas(walletBalancesDict["Education, Onboarding & Technology"].regularBalance + walletBalancesDict["Education, Onboarding & Technology"].reserveBalance);
-    OPERATIONS.sandRemainingSmall.innerHTML = numberToStringWithCommas(walletBalancesDict["Operations"].regularBalance + walletBalancesDict["Operations"].reserveBalance);
-    RESERVE.sandRemainingSmall.innerHTML = numberToStringWithCommas(walletBalancesDict["Reserve"].regularBalance + walletBalancesDict["Reserve"].reserveBalance);
+    WEB3_ECOSYSTEM_INTEGRATION.sandRemainingSmall.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Web3 Ecosystem Integration"].regularBalance + walletBalancesDict["Web3 Ecosystem Integration"].reserveBalance));
+    SEASON_REWARDS_GAME_CREATION.sandRemainingSmall.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Season Rewards & Game Creation"].regularBalance + walletBalancesDict["Season Rewards & Game Creation"].reserveBalance));
+    COMMUNITY_ENGAGEMENT_CHARITY.sandRemainingSmall.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Community Engagement & Charity"].regularBalance + walletBalancesDict["Community Engagement & Charity"].reserveBalance));
+    EDUCATION_ONBOARDING_TECHNOLOGY.sandRemainingSmall.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Education, Onboarding & Technology"].regularBalance + walletBalancesDict["Education, Onboarding & Technology"].reserveBalance));
+    OPERATIONS.sandRemainingSmall.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Operations"].regularBalance + walletBalancesDict["Operations"].reserveBalance));
+    RESERVE.sandRemainingSmall.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Reserve"].regularBalance + walletBalancesDict["Reserve"].reserveBalance));
 }
 
 function setSandRemainingElements(walletBalancesDict) {
-    WEB3_ECOSYSTEM_INTEGRATION.sandRemaining.innerHTML = numberToStringWithCommas((walletBalancesDict["Web3 Ecosystem Integration"].regularBalance + walletBalancesDict["Web3 Ecosystem Integration"].reserveBalance).toFixed(2));
-    SEASON_REWARDS_GAME_CREATION.sandRemaining.innerHTML = numberToStringWithCommas((walletBalancesDict["Season Rewards & Game Creation"].regularBalance + walletBalancesDict["Season Rewards & Game Creation"].reserveBalance).toFixed(2));
-    COMMUNITY_ENGAGEMENT_CHARITY.sandRemaining.innerHTML = numberToStringWithCommas((walletBalancesDict["Community Engagement & Charity"].regularBalance + walletBalancesDict["Community Engagement & Charity"].reserveBalance).toFixed(2));
-    EDUCATION_ONBOARDING_TECHNOLOGY.sandRemaining.innerHTML = numberToStringWithCommas((walletBalancesDict["Education, Onboarding & Technology"].regularBalance + walletBalancesDict["Education, Onboarding & Technology"].reserveBalance).toFixed(2));
-    OPERATIONS.sandRemaining.innerHTML = numberToStringWithCommas((walletBalancesDict["Operations"].regularBalance + walletBalancesDict["Operations"].reserveBalance).toFixed(2));
-    RESERVE.sandRemaining.innerHTML = numberToStringWithCommas((walletBalancesDict["Reserve"].regularBalance + walletBalancesDict["Reserve"].reserveBalance).toFixed(2));
+    WEB3_ECOSYSTEM_INTEGRATION.sandRemaining.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Web3 Ecosystem Integration"].regularBalance + walletBalancesDict["Web3 Ecosystem Integration"].reserveBalance));
+    SEASON_REWARDS_GAME_CREATION.sandRemaining.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Season Rewards & Game Creation"].regularBalance + walletBalancesDict["Season Rewards & Game Creation"].reserveBalance));
+    COMMUNITY_ENGAGEMENT_CHARITY.sandRemaining.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Community Engagement & Charity"].regularBalance + walletBalancesDict["Community Engagement & Charity"].reserveBalance));
+    EDUCATION_ONBOARDING_TECHNOLOGY.sandRemaining.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Education, Onboarding & Technology"].regularBalance + walletBalancesDict["Education, Onboarding & Technology"].reserveBalance));
+    OPERATIONS.sandRemaining.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Operations"].regularBalance + walletBalancesDict["Operations"].reserveBalance));
+    RESERVE.sandRemaining.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Reserve"].regularBalance + walletBalancesDict["Reserve"].reserveBalance));
 }
 
 function setPercentageRemainingToElement(walletBalance, percentageRemainingElement, fillingBarElement) {
@@ -122,7 +122,7 @@ async function main(){
                 "reserveAddress": "0x90D09dCEBD053Bb65D56EF8dddE9810972f583Ba",
                 "regularBalance": 0,
                 "reserveBalance": 4183673,
-                "annualBudget": 3600000,
+                "annualBudget": 4183673,
                 "__v": 0
             },
             {
@@ -132,7 +132,7 @@ async function main(){
                 "reserveAddress": "0x3025642a82b2938E08bFD239d246dA2d597d8f1e",
                 "regularBalance": 0,
                 "reserveBalance": 2565986,
-                "annualBudget": 3000000,
+                "annualBudget": 2565986,
                 "__v": 0
             },
             {
@@ -142,7 +142,7 @@ async function main(){
                 "reserveAddress": "0x3EC1425375E631F4C3E6A0a10D2da94d69612e66",
                 "regularBalance": 317,
                 "reserveBalance": 1758033.47259012,
-                "annualBudget": 600000,
+                "annualBudget": 1758034,
                 "__v": 0
             },
             {
@@ -152,7 +152,7 @@ async function main(){
                 "reserveAddress": "0x8EB7E5120D5a0CF989C296E4f2BBCE40bac8cD9B",
                 "regularBalance": 0,
                 "reserveBalance": 446253.985,
-                "annualBudget": 600000,
+                "annualBudget": 446258,
                 "__v": 0
             },
             {
@@ -162,7 +162,7 @@ async function main(){
                 "reserveAddress": "0xF7aEa344B416cB5D4F23e6310DAf4b14A81aE18A",
                 "regularBalance": 112508.9407083081,
                 "reserveBalance": 2807365,
-                "annualBudget": 1800000,
+                "annualBudget": 3000000,
                 "__v": 0
             },
             {
@@ -172,7 +172,7 @@ async function main(){
                 "reserveAddress": "0x997FB6d902cAD0b7dD736829FB7871A8f28865f5",
                 "regularBalance": 0,
                 "reserveBalance": 390481,
-                "annualBudget": 100000,
+                "annualBudget": 390476,
                 "__v": 0
             }
         ];
