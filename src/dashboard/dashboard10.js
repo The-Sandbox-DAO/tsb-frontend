@@ -112,6 +112,19 @@ function setElementsAccordingToBalances(walletBalancesDict) {
     setCurrentBalanceElement(walletBalancesDict);
 }
 
+async function fetchWalletBalances() {
+    const url = `https://api.tsbdao.com/daoWallet/`;
+    const options = {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' }
+    };
+  
+    const response = await fetch(url, options);
+    const json = await response.json();
+    console.log(json);
+    return json;
+}
+
 const fetchedBalancesArray = [
     {
         "_id": "6810c8b5ee5bc52a633d657f",
@@ -177,7 +190,7 @@ const fetchedBalancesArray = [
 
 async function main(){
     try {
-        const fetchedBalancesArray = await fetchWalletBalances();
+        fetchedBalancesArray = await fetchWalletBalances();
         console.log("Fetched Balances:", fetchedBalancesArray);
 
         let walletBalancesDict = {};
