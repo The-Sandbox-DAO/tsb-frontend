@@ -48,25 +48,25 @@ function numberToStringWithCommas(x) {
 }
 
 function setSandRemainingSmallElements(walletBalancesDict) {
-    WEB3_ECOSYSTEM_INTEGRATION.sandRemainingSmall.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Web3 Ecosystem Integration"].regularBalance + walletBalancesDict["Web3 Ecosystem Integration"].reserveBalance));
-    SEASON_REWARDS_GAME_CREATION.sandRemainingSmall.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Season Rewards & Game Creation"].regularBalance + walletBalancesDict["Season Rewards & Game Creation"].reserveBalance));
-    COMMUNITY_ENGAGEMENT_CHARITY.sandRemainingSmall.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Community Engagement & Charity"].regularBalance + walletBalancesDict["Community Engagement & Charity"].reserveBalance));
-    EDUCATION_ONBOARDING_TECHNOLOGY.sandRemainingSmall.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Education, Onboarding & Technology"].regularBalance + walletBalancesDict["Education, Onboarding & Technology"].reserveBalance));
-    OPERATIONS.sandRemainingSmall.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Operations"].regularBalance + walletBalancesDict["Operations"].reserveBalance));
-    RESERVE.sandRemainingSmall.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Reserve"].regularBalance + walletBalancesDict["Reserve"].reserveBalance));
+    WEB3_ECOSYSTEM_INTEGRATION.sandRemainingSmall.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Web3 Ecosystem Integration"].reserveBalance));
+    SEASON_REWARDS_GAME_CREATION.sandRemainingSmall.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Season Rewards & Game Creation"].reserveBalance));
+    COMMUNITY_ENGAGEMENT_CHARITY.sandRemainingSmall.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Community Engagement & Charity"].reserveBalance));
+    EDUCATION_ONBOARDING_TECHNOLOGY.sandRemainingSmall.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Education, Onboarding & Technology"].reserveBalance));
+    OPERATIONS.sandRemainingSmall.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Operations"].reserveBalance));
+    RESERVE.sandRemainingSmall.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Reserve"].reserveBalance));
 }
 
 function setSandRemainingElements(walletBalancesDict) {
-    WEB3_ECOSYSTEM_INTEGRATION.sandRemaining.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Web3 Ecosystem Integration"].regularBalance + walletBalancesDict["Web3 Ecosystem Integration"].reserveBalance));
-    SEASON_REWARDS_GAME_CREATION.sandRemaining.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Season Rewards & Game Creation"].regularBalance + walletBalancesDict["Season Rewards & Game Creation"].reserveBalance));
-    COMMUNITY_ENGAGEMENT_CHARITY.sandRemaining.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Community Engagement & Charity"].regularBalance + walletBalancesDict["Community Engagement & Charity"].reserveBalance));
-    EDUCATION_ONBOARDING_TECHNOLOGY.sandRemaining.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Education, Onboarding & Technology"].regularBalance + walletBalancesDict["Education, Onboarding & Technology"].reserveBalance));
-    OPERATIONS.sandRemaining.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Operations"].regularBalance + walletBalancesDict["Operations"].reserveBalance));
-    RESERVE.sandRemaining.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Reserve"].regularBalance + walletBalancesDict["Reserve"].reserveBalance));
+    WEB3_ECOSYSTEM_INTEGRATION.sandRemaining.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Web3 Ecosystem Integration"].reserveBalance));
+    SEASON_REWARDS_GAME_CREATION.sandRemaining.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Season Rewards & Game Creation"].reserveBalance));
+    COMMUNITY_ENGAGEMENT_CHARITY.sandRemaining.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Community Engagement & Charity"].reserveBalance));
+    EDUCATION_ONBOARDING_TECHNOLOGY.sandRemaining.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Education, Onboarding & Technology"].reserveBalance));
+    OPERATIONS.sandRemaining.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Operations"].reserveBalance));
+    RESERVE.sandRemaining.innerHTML = numberToStringWithCommas(Math.round(walletBalancesDict["Reserve"].reserveBalance));
 }
 
 function setPercentageRemainingToElement(walletBalance, percentageRemainingElement, fillingBarElement) {
-    const totalBalance = walletBalance.regularBalance + walletBalance.reserveBalance;
+    const totalBalance = walletBalance.reserveBalance;
     const percentage = (totalBalance / walletBalance.annualBudget) * 100;
     setPercentageAmount(percentageRemainingElement, percentage);
     setColorOfFillinBar(fillingBarElement, percentage);
@@ -99,7 +99,7 @@ function setColorOfFillinBar(fillingBar, percentage) {
 function setCurrentBalanceElement(walletBalancesDict) {
     let totalBalance = 0;
     for (let key in walletBalancesDict) {
-        totalBalance += (walletBalancesDict[key].regularBalance + walletBalancesDict[key].reserveBalance);
+        totalBalance += walletBalancesDict[key].reserveBalance;
     }
     console.log("Total DAO Balance:", totalBalance);
     currentBalanceElement.innerHTML = numberToStringWithCommas(totalBalance.toFixed(2));
