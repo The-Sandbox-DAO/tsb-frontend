@@ -125,7 +125,7 @@ async function fetchWalletBalances() {
     return json;
 }
 
-const fetchedBalancesArray = [
+let fetchedBalancesArray = [
     {
         "_id": "6810c8b5ee5bc52a633d657f",
         "name": "Web3 Ecosystem Integration",
